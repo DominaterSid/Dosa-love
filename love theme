@@ -118,41 +118,41 @@ But<br>
 At the end<br>
 We stay together<br>
 i love you`,
-        img: 'img1.jpg'
+        img: 'img1.jpg.jpeg'
       },
       {
         text: `You remember this?<br>
 Our first date?<br>
 I could never forget that pasta`,
-        img: 'img2.jpg'
+        img: 'img2.jpg.jpeg'
       },
       {
         text: `our first time meeting<br>
 I was so nervous to touch you`,
-        img: 'img3.jpg'
+        img: 'img3.jpg.jpeg'
       },
       {
         text: `Aww our first trip together`,
-        img: 'img4.jpg'
+        img: 'img4.jpg.jpeg'
       },
       {
         text: `Oh my godd our first car ride<br>
 I love this`,
-        img: 'img5.jpg'
+        img: 'img5.jpg.jpeg'
       },
       {
         text: `thank you for making my birthday the best one ever.`,
-        img: 'img6.jpg'
+        img: 'img6.jpg.jpeg'
       },
       {
         text: `the best picture of us.`,
-        img: 'img7.jpg'
+        img: 'img7.jpg.jpeg'
       },
       {
         text: `this is last note<br>
 I love you beb<br>
 we are together no matter what.`,
-        img: 'img8.jpg'
+        img: 'img8.jpg.jpeg'
       }
     ];
 
