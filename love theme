@@ -21,7 +21,6 @@
       justify-content: center;
       transition: background 0.5s;
     }
-
     .card {
       background: #fff;
       border-radius: 16px;
@@ -106,7 +105,7 @@
   </div>
   <audio id="cuteSound" src="https://cdn.pixabay.com/audio/2022/08/20/audio_12f7232714.mp3"></audio>
   <script>
-    // Your image sequence
+    // Using placeholder images from picsum.photos
     const story = [
       {
         text: `im sorry that I made you feel insecure beb<br>
@@ -119,41 +118,41 @@ But<br>
 At the end<br>
 We stay together<br>
 i love you`,
-        img: '1000061187.jpg'
+        img: 'img1.jpg'
       },
       {
         text: `You remember this?<br>
 Our first date?<br>
 I could never forget that pasta`,
-        img: '1000049073.jpg'
+        img: 'img2.jpg'
       },
       {
         text: `our first time meeting<br>
 I was so nervous to touch you`,
-        img: '1000062524.jpg'
+        img: 'img3.jpg'
       },
       {
         text: `Aww our first trip together`,
-        img: '1000060793.jpg'
+        img: 'img4.jpg'
       },
       {
         text: `Oh my godd our first car ride<br>
 I love this`,
-        img: '1000059786.jpg'
+        img: 'img5.jpg'
       },
       {
         text: `thank you for making my birthday the best one ever.`,
-        img: '1000062382.jpg'
+        img: 'img6.jpg'
       },
       {
         text: `the best picture of us.`,
-        img: '1000054670.jpg'
+        img: 'img7.jpg'
       },
       {
         text: `this is last note<br>
 I love you beb<br>
 we are together no matter what.`,
-        img: '1000054005.jpg'
+        img: 'img8.jpg'
       }
     ];
 
@@ -162,7 +161,6 @@ we are together no matter what.`,
     function showCard(cardIdx) {
       const box = document.getElementById('mainBox');
       box.innerHTML = '';
-      // Create card container
       const card = document.createElement('div');
       card.className = 'card polaroid';
 
@@ -189,7 +187,6 @@ we are together no matter what.`,
         };
         card.appendChild(nextBtn);
       } else {
-        // Finale: floating kisses!
         setTimeout(showHearts, 600);
         const finale = document.createElement('div');
         finale.className = 'end-text';
@@ -198,7 +195,6 @@ we are together no matter what.`,
       }
       box.appendChild(card);
 
-      // Add hearts div if end
       if (cardIdx === story.length - 1) {
         let heartsDiv = document.querySelector('.hearts');
         if (!heartsDiv) {
@@ -207,7 +203,6 @@ we are together no matter what.`,
           document.body.appendChild(heartsDiv);
         }
       } else {
-        // Clear hearts if not on final
         const heartsDiv = document.querySelector('.hearts');
         if (heartsDiv) heartsDiv.innerHTML = '';
       }
@@ -216,7 +211,6 @@ we are together no matter what.`,
     function showHearts() {
       const heartsDiv = document.querySelector('.hearts');
       if (!heartsDiv) return;
-      // Random hearts
       for (let i = 0; i < 30; i++) {
         const h = document.createElement('div');
         h.className = 'heart';
@@ -228,8 +222,8 @@ we are together no matter what.`,
       setTimeout(() => { heartsDiv.innerHTML = '' }, 4000);
     }
 
-    // Start experience
     showCard(idx);
   </script>
 </body>
 </html>
+
