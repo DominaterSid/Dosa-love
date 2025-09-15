@@ -33,14 +33,13 @@
       position: relative;
       transition: box-shadow 0.2s;
     }
-  .card img {
-  width: 90%;     /* take up 90% of container width */
-  height: auto;   /* adjusts height proportionally */
-  object-fit: cover;
-  border-radius: 18px;
-  box-shadow: 0 2px 6px #fcc5e6;
-  margin-bottom: 18px;
-}
+    .card img {
+      width: 90%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 2px 6px #fcc5e6;
+      margin-bottom: 18px;
     }
     .polaroid {
       border: 4px solid #ffdee4;
@@ -69,29 +68,33 @@
     .next-btn:hover {
       background: #fdc9e2;
       color: #fa366e;
-    {
-   .hearts {
-  position: fixed;   /* instead of absolute */
-  left: 0;
-  top: 0;
-  width: 100vw;      /* full width of screen */
-  height: 100vh;     /* full height of screen */
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 999;      /* make sure it floats above everything */
-}
+    }
+
+    /* Hearts container now covers the whole screen */
+    .hearts {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 999;
+    }
     .heart {
       position: absolute;
-      width: 32px; height: 32px;
+      width: 32px;
+      height: 32px;
       background: url('https://emojicdn.elk.sh/💗') no-repeat center center/contain;
       animation: floatUp 3.2s linear forwards;
       opacity: 0.85;
     }
     @keyframes floatUp {
-      0% { transform: translateY(120%); opacity: 0.8; }
-      70% { opacity: 1; }
-      100% { transform: translateY(-80%); opacity: 0; }
+      0%   { transform: translateY(120%) translateX(0); opacity: 0.8; }
+      50%  { transform: translateY(-20%) translateX(15px); opacity: 1; }
+      100% { transform: translateY(-80%) translateX(-15px); opacity: 0; }
     }
+
     .end-text {
       font-size: 2rem;
       margin-top: 38px;
@@ -108,7 +111,6 @@
   </div>
   <audio id="cuteSound" src="https://cdn.pixabay.com/audio/2022/08/20/audio_12f7232714.mp3"></audio>
   <script>
-    // Using placeholder images from picsum.photos
     const story = [
       {
         text: `im sorry that I made you feel insecure beb<br>
@@ -217,9 +219,10 @@ we are together no matter what.`,
       for (let i = 0; i < 30; i++) {
         const h = document.createElement('div');
         h.className = 'heart';
-        h.style.left = (Math.random() * 90 + 5) + 'vw';
+        h.style.left = (Math.random() * 100) + 'vw'; // full screen
         h.style.bottom = '-32px';
         h.style.animationDelay = (Math.random() * 2) + 's';
+        h.style.transform = `scale(${Math.random() * 0.8 + 0.5})`; // random size
         heartsDiv.appendChild(h);
       }
       setTimeout(() => { heartsDiv.innerHTML = '' }, 4000);
@@ -229,5 +232,3 @@ we are together no matter what.`,
   </script>
 </body>
 </html>
-
-
